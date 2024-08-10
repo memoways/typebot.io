@@ -1,7 +1,8 @@
 import { createBlock } from '@typebot.io/forge'
 import { InworldLogo } from './logo'
 import { auth } from './auth'
-import { conversation } from './actions/conversation'
+import { openSession } from './actions/openSession'
+import { sendMessage } from './actions/sendMessage'
 
 export const inworldBlock = createBlock({
   id: 'inworld',
@@ -9,5 +10,5 @@ export const inworldBlock = createBlock({
   tags: [],
   LightLogo: InworldLogo,
   auth,
-  actions: [conversation],
+  actions: [openSession, sendMessage],
 })
