@@ -1,5 +1,5 @@
 import { createAction, option } from '@typebot.io/forge'
-import { auth } from '../auth'
+import { auth, authHeader } from '../auth'
 import ky, { HTTPError } from 'ky'
 import { BASE_URL } from '../constants'
 
@@ -51,11 +51,12 @@ export const openSession = createAction({
         BASE_URL,
         `${options.characterId}:openSession`].join("/"), {
         headers: {
-          Authorization: auth.authHeader(credentials),
+          Authorization: authHeader(credentials),
         },
       }).json()
 
-      variables.set(options.sessionVariable, JSON.stringify(res))
+      if (options.sessionVariable)
+        variables.set(options.sessionVariable, JSON.stringify(res))
     }
   }
 })

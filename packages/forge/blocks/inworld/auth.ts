@@ -20,8 +20,9 @@ export const auth = {
       isDebounceDisabled: true,
     }),
   }),
-  authHeader: function({ apiKey, apiSecret }) {
-    const b64 = Buffer.from(`${apiKey}:${apiSecret}`).toString('base64')
-    return `Basic ${b64}`
-  }
 } satisfies AuthDefinition
+
+export function authHeader({ apiKey, apiSecret }: any) {
+  const b64 = Buffer.from(`${apiKey}:${apiSecret}`).toString('base64')
+  return `Basic ${b64}`
+}

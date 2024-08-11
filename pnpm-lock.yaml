@@ -1447,6 +1447,10 @@ importers:
         version: 5.4.5
 
   packages/forge/blocks/inworld:
+    dependencies:
+      ky:
+        specifier: 1.2.4
+        version: 1.2.4
     devDependencies:
       '@typebot.io/forge':
         specifier: workspace:*
@@ -24083,11 +24087,11 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.0
       chokidar: 3.6.0
-      glob: 10.3.10
+      glob: 10.4.5
       html-minifier: 4.0.0
       js-beautify: 1.15.1
       lodash: 4.17.21
-      minimatch: 9.0.3
+      minimatch: 9.0.5
       mjml-core: 4.15.3
       mjml-migrate: 4.15.3
       mjml-parser-xml: 4.15.3

@@ -1,5 +1,5 @@
 import { createAction, option } from '@typebot.io/forge'
-import { auth } from '../auth'
+import { auth, authHeader } from '../auth'
 import ky, { HTTPError } from 'ky'
 import { BASE_URL } from '../constants'
 
@@ -31,7 +31,10 @@ export const sendMessage = createAction({
       variables,
     }) => {
 
-      const session = JSON.parse(variables.get(options.sessionVariable))
+      let session = variables.get(options.sessionVariable!) as any
+      if (!session) return
+      session = JSON.parse(session)
+
       const char = session.sessionCharacters[0]
       const workspace = char.name.split('/')[1]
 
@@ -47,15 +50,16 @@ export const sendMessage = createAction({
         "sessionCharacters",
         `${characterId}:sendText`].join("/"), {
         headers: {
-          Authorization: auth.authHeader(credentials),
+          Authorization: authHeader(credentials),
           "Grpc-Metadata-session-id": sessionId
         },
         json: {
           text: options.message
         }
-      }).json()
+      }).json() as any
 
-      variables.set(options.responseVariable, res.textList.join("\n"))
+      if (options.sessionVariable)
+        variables.set(options.responseVariable as string, res.textList.join("\n"))
     }
   }
 })
