@@ -47,7 +47,9 @@ export const openSession = createAction({
       options,
       variables,
     }) => {
-      const res = await ky.post(BASE_URL + options.characterId + ":openSession", {
+      const res = await ky.post([
+        BASE_URL,
+        `${options.characterId}:openSession`].join("/"), {
         headers: {
           Authorization: auth.authHeader(credentials),
         },

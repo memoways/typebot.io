@@ -38,7 +38,14 @@ export const sendMessage = createAction({
       const sessionId = session.name
       const characterId = char.character
 
-      const res = await ky.post(BASE_URL + `workspaces/${workspace}/sessions/${sessionId}/sessionCharacters/${characterId}:sendText`, {
+      const res = await ky.post([
+        BASE_URL,
+        "workspaces",
+        workspace,
+        "sessions",
+        sessionId,
+        "sessionCharacters",
+        `${characterId}:sendText`].join("/"), {
         headers: {
           Authorization: auth.authHeader(credentials),
           "Grpc-Metadata-session-id": sessionId
