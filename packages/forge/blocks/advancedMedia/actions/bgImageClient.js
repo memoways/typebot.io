@@ -14,6 +14,7 @@ function container(name) {
   div.style.opacity = "0"
   div.style.transition = "opacity 1s ease-in-out"
   const root = document.querySelector("typebot-standard").parentElement
+  root.style.position = "relative"
   root.prepend(div)
   return div
 }
