@@ -36,6 +36,7 @@ function render(url) {
   let img = new Image()
   img.onload = () => {
     src.style.opacity = "0"
+    dst.innerHTML = ""
     dst.style.opacity = "1"
     dst.style.backgroundImage = "url(" + url + ")"
   }
