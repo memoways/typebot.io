@@ -1323,6 +1323,28 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(eslint@8.44.0)(typescript@5.4.5)
 
+  packages/forge/blocks/advancedMedia:
+    dependencies:
+      raw-loader:
+        specifier: ^0.5.1
+        version: 0.5.1
+    devDependencies:
+      '@typebot.io/forge':
+        specifier: workspace:*
+        version: link:../../core
+      '@typebot.io/lib':
+        specifier: workspace:*
+        version: link:../../../lib
+      '@typebot.io/tsconfig':
+        specifier: workspace:*
+        version: link:../../../tsconfig
+      '@types/react':
+        specifier: 18.2.15
+        version: 18.2.15
+      typescript:
+        specifier: 5.4.5
+        version: 5.4.5
+
   packages/forge/blocks/anthropic:
     dependencies:
       '@ai-sdk/anthropic':
@@ -1670,6 +1692,9 @@ importers:
 
   packages/forge/repository:
     devDependencies:
+      '@typebot.io/advanced-media-block':
+        specifier: workspace:*
+        version: link:../blocks/advancedMedia
       '@typebot.io/anthropic-block':
         specifier: workspace:*
         version: link:../blocks/anthropic
@@ -11318,6 +11343,9 @@ packages:
   raw-body@2.5.2:
     resolution: {integrity: sha512-8zGqypfENjCIqGhgXToC8aB2r7YrBX+AQAfIPs/Mlk+BtPTztOvTS01NRW/3Eh60J+a48lt8qsCzirQ6loCVfA==}
     engines: {node: '>= 0.8'}
+
+  raw-loader@0.5.1:
+    resolution: {integrity: sha512-sf7oGoLuaYAScB4VGr0tzetsYlS8EJH6qnTCfQ/WVEa89hALQ4RQfCKt5xCyPQKPDUbVUAIP1QsxAwfAjlDp7Q==}
 
   rc@1.2.8:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
@@ -25363,6 +25391,8 @@ snapshots:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  raw-loader@0.5.1: {}
 
   rc@1.2.8:
     dependencies:

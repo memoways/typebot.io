@@ -25,6 +25,8 @@ import { segmentBlock } from '@typebot.io/segment-block'
 import { segmentBlockSchema } from '@typebot.io/segment-block/schemas'
 import { inworldBlock } from '@typebot.io/inworld-block'
 import { inworldBlockSchema } from '@typebot.io/inworld-block/schemas'
+import { advancedMediaBlock } from '@typebot.io/advanced-media-block'
+import { advancedMediaBlockSchema } from '@typebot.io/advanced-media-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -40,4 +42,5 @@ export const forgedBlockSchemas = {
   [nocodbBlock.id]: nocodbBlockSchema,
   [segmentBlock.id]: segmentBlockSchema,
   [inworldBlock.id]: inworldBlockSchema,
+  [advancedMediaBlock.id]: advancedMediaBlockSchema,
 }
