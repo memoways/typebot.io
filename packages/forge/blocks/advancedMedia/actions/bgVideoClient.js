@@ -12,6 +12,7 @@ function container(name) {
   div.style.backgroundPosition = "center"
   div.style.display = "block"
   div.style.opacity = "0"
+  div.style.zIndex = "-1"
   div.style.transition = "opacity 1s ease-in-out"
   const root = document.querySelector("typebot-standard").parentElement
   root.style.position = "relative"
@@ -19,7 +20,7 @@ function container(name) {
   return div
 }
 
-function render(url) {
+function render(args) {
   const a = container("a")
   const b = container("b")
 
@@ -42,27 +43,30 @@ function render(url) {
   video.style.height = "100%"
   video.style.objectFit = "cover"
 
-
+  dst.innerHTML = ""
   dst.prepend(video)
 
   var player = videojs(video)
-  player.muted(true)
-  player.src(url)
+  player.muted(args.muted != 0)
+  player.src(args.url)
   player.controls(false)
   player.fill(true)
   player.disablePictureInPicture(true)
-  player.loop(true)
+  player.loop(args.loop)
   player.ready(() => {
     src.style.opacity = "0"
     dst.style.opacity = "1"
     player.play()
+    setTimeout(() => {
+      src.innerHTML = ""
+    }, 1000)
   })
 
 }
 
-function install(url) {
+function install(args) {
   if (document.querySelector("[data-videojs]")) {
-    render(url)
+    render(args)
     return
   }
 
@@ -77,9 +81,10 @@ function install(url) {
   script.setAttribute("src", "//vjs.zencdn.net/8.3.0/video.min.js")
   document.head.prepend(script)
   script.onload = () => {
-    render(url)
+    render(args)
   }
 }
 
-install(url)
+let opts = {url: URL, muted: MUTED, loop: LOOP}
+install(opts)
 

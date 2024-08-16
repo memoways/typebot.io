@@ -17,7 +17,7 @@ export const bgImage = createAction({
       parseFunction: ({ options }) => {
         return {
           args: {
-            url: options.url ?? null
+            URL: options.url ?? null
           },
           content,
         }

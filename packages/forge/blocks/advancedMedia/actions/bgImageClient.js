@@ -12,6 +12,7 @@ function container(name) {
   div.style.backgroundPosition = "center"
   div.style.display = "block"
   div.style.opacity = "0"
+  div.style.zIndex = "-1"
   div.style.transition = "opacity 1s ease-in-out"
   const root = document.querySelector("typebot-standard").parentElement
   root.style.position = "relative"
@@ -40,8 +41,11 @@ function render(url) {
     dst.innerHTML = ""
     dst.style.opacity = "1"
     dst.style.backgroundImage = "url(" + url + ")"
+    setTimeout(() => {
+      src.innerHTML = ""
+    }, 1000)
   }
   img.src = url
 }
 
-render(url)
+render(URL)
