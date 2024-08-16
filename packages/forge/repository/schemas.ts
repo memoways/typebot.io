@@ -23,6 +23,8 @@ import { nocodbBlock } from '@typebot.io/nocodb-block'
 import { nocodbBlockSchema } from '@typebot.io/nocodb-block/schemas'
 import { segmentBlock } from '@typebot.io/segment-block'
 import { segmentBlockSchema } from '@typebot.io/segment-block/schemas'
+import { inworldBlock } from '@typebot.io/inworld-block'
+import { inworldBlockSchema } from '@typebot.io/inworld-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -37,4 +39,5 @@ export const forgedBlockSchemas = {
   [openRouterBlock.id]: openRouterBlockSchema,
   [nocodbBlock.id]: nocodbBlockSchema,
   [segmentBlock.id]: segmentBlockSchema,
+  [inworldBlock.id]: inworldBlockSchema,
 }

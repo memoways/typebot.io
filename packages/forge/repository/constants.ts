@@ -14,4 +14,5 @@ export const forgedBlockIds = [
   'open-router',
   'nocodb',
   'segment',
+  'inworld',
 ] as const satisfies ForgedBlock['type'][]

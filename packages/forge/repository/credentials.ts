@@ -18,6 +18,8 @@ import { nocodbBlock } from '@typebot.io/nocodb-block'
 import { nocodbCredentialsSchema } from '@typebot.io/nocodb-block/schemas'
 import { segmentBlock } from '@typebot.io/segment-block'
 import { segmentCredentialsSchema } from '@typebot.io/segment-block/schemas'
+import { inworldBlock } from '@typebot.io/inworld-block'
+import { inworldCredentialsSchema } from '@typebot.io/inworld-block/schemas'
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -30,4 +32,5 @@ export const forgedCredentialsSchemas = {
   [openRouterBlock.id]: openRouterCredentialsSchema,
   [nocodbBlock.id]: nocodbCredentialsSchema,
   [segmentBlock.id]: segmentCredentialsSchema,
+  [inworldBlock.id]: inworldCredentialsSchema,
 }

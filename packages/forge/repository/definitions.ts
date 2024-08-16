@@ -11,6 +11,7 @@ import { calComBlock } from '@typebot.io/cal-com-block'
 import { openAIBlock } from '@typebot.io/openai-block'
 import { nocodbBlock } from '@typebot.io/nocodb-block'
 import { segmentBlock } from '@typebot.io/segment-block'
+import { inworldBlock } from '@typebot.io/inworld-block'
 
 export const forgedBlocks = {
   [openAIBlock.id]: openAIBlock,
@@ -25,4 +26,5 @@ export const forgedBlocks = {
   [openRouterBlock.id]: openRouterBlock,
   [nocodbBlock.id]: nocodbBlock,
   [segmentBlock.id]: segmentBlock,
+  [inworldBlock.id]: inworldBlock,
 }
