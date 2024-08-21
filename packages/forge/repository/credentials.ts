@@ -20,6 +20,8 @@ import { segmentBlock } from '@typebot.io/segment-block'
 import { segmentCredentialsSchema } from '@typebot.io/segment-block/schemas'
 import { inworldBlock } from '@typebot.io/inworld-block'
 import { inworldCredentialsSchema } from '@typebot.io/inworld-block/schemas'
+import { openidBlock } from '@typebot.io/openid-block'
+import { openidCredentialsSchema } from '@typebot.io/openid-block/schemas'
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -33,4 +35,5 @@ export const forgedCredentialsSchemas = {
   [nocodbBlock.id]: nocodbCredentialsSchema,
   [segmentBlock.id]: segmentCredentialsSchema,
   [inworldBlock.id]: inworldCredentialsSchema,
+  [openidBlock.id]: openidCredentialsSchema,
 }

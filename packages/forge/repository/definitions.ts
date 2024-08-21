@@ -13,6 +13,7 @@ import { nocodbBlock } from '@typebot.io/nocodb-block'
 import { segmentBlock } from '@typebot.io/segment-block'
 import { inworldBlock } from '@typebot.io/inworld-block'
 import { advancedMediaBlock } from '@typebot.io/advanced-media-block'
+import { openidBlock } from '@typebot.io/openid-block'
 
 export const forgedBlocks = {
   [openAIBlock.id]: openAIBlock,
@@ -29,4 +30,5 @@ export const forgedBlocks = {
   [segmentBlock.id]: segmentBlock,
   [inworldBlock.id]: inworldBlock,
   [advancedMediaBlock.id]: advancedMediaBlock,
+  [openidBlock.id]: openidBlock,
 }
