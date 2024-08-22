@@ -29,6 +29,8 @@ import { advancedMediaBlock } from '@typebot.io/advanced-media-block'
 import { advancedMediaBlockSchema } from '@typebot.io/advanced-media-block/schemas'
 import { openidBlock } from '@typebot.io/openid-block'
 import { openidBlockSchema } from '@typebot.io/openid-block/schemas'
+import { groqBlock } from '@typebot.io/groq-block'
+import { groqBlockSchema } from '@typebot.io/groq-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -46,4 +48,5 @@ export const forgedBlockSchemas = {
   [inworldBlock.id]: inworldBlockSchema,
   [advancedMediaBlock.id]: advancedMediaBlockSchema,
   [openidBlock.id]: openidBlockSchema,
+  [groqBlock.id]: groqBlockSchema,
 }

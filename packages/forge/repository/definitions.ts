@@ -14,6 +14,7 @@ import { segmentBlock } from '@typebot.io/segment-block'
 import { inworldBlock } from '@typebot.io/inworld-block'
 import { advancedMediaBlock } from '@typebot.io/advanced-media-block'
 import { openidBlock } from '@typebot.io/openid-block'
+import { groqBlock } from '@typebot.io/groq-block'
 
 export const forgedBlocks = {
   [openAIBlock.id]: openAIBlock,
@@ -31,4 +32,5 @@ export const forgedBlocks = {
   [inworldBlock.id]: inworldBlock,
   [advancedMediaBlock.id]: advancedMediaBlock,
   [openidBlock.id]: openidBlock,
+  [groqBlock.id]: groqBlock,
 }

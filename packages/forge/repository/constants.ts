@@ -17,4 +17,5 @@ export const forgedBlockIds = [
   'inworld',
   'advanced-media',
   'openid',
+  'groq',
 ] as const satisfies ForgedBlock['type'][]

@@ -22,6 +22,8 @@ import { inworldBlock } from '@typebot.io/inworld-block'
 import { inworldCredentialsSchema } from '@typebot.io/inworld-block/schemas'
 import { openidBlock } from '@typebot.io/openid-block'
 import { openidCredentialsSchema } from '@typebot.io/openid-block/schemas'
+import { groqBlock } from '@typebot.io/groq-block'
+import { groqCredentialsSchema } from '@typebot.io/groq-block/schemas'
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -36,4 +38,5 @@ export const forgedCredentialsSchemas = {
   [segmentBlock.id]: segmentCredentialsSchema,
   [inworldBlock.id]: inworldCredentialsSchema,
   [openidBlock.id]: openidCredentialsSchema,
+  [groqBlock.id]: groqCredentialsSchema,
 }
