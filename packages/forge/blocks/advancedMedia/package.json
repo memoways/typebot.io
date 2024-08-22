@@ -5,10 +5,8 @@
   "main": "index.ts",
   "keywords": [],
   "license": "AGPL-3.0-or-later",
-  "dependencies": {
-    "raw-loader": "^0.5.1"
-  },
   "devDependencies": {
+    "raw-loader": "^0.5.1",
     "@typebot.io/forge": "workspace:*",
     "@typebot.io/tsconfig": "workspace:*",
     "@types/react": "18.2.15",
