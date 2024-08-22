@@ -10,7 +10,8 @@
     "@typebot.io/tsconfig": "workspace:*",
     "@types/react": "18.2.15",
     "typescript": "5.4.5",
-    "@typebot.io/lib": "workspace:*"
+    "@typebot.io/lib": "workspace:*",
+    "raw-loader": "^0.5.1"
   },
   "dependencies": {
     "ky": "1.2.4"

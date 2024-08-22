@@ -27,6 +27,5 @@ export const auth = {
       withVariableButton: false,
       isDebounceDisabled: true,
     }),
-    //https://auth.memoways.com/realms/plastique/.well-known/openid-configuration
   }),
 } satisfies AuthDefinition
