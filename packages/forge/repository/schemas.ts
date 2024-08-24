@@ -31,6 +31,8 @@ import { openidBlock } from '@typebot.io/openid-block'
 import { openidBlockSchema } from '@typebot.io/openid-block/schemas'
 import { groqBlock } from '@typebot.io/groq-block'
 import { groqBlockSchema } from '@typebot.io/groq-block/schemas'
+import { insertChatBlock } from '@typebot.io/insert-chat-block'
+import { insertChatBlockSchema } from '@typebot.io/insert-chat-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -49,4 +51,5 @@ export const forgedBlockSchemas = {
   [advancedMediaBlock.id]: advancedMediaBlockSchema,
   [openidBlock.id]: openidBlockSchema,
   [groqBlock.id]: groqBlockSchema,
+  [insertChatBlock.id]: insertChatBlockSchema,
 }

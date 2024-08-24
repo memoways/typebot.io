@@ -22,6 +22,7 @@
     "@typebot.io/inworld-block": "workspace:*",
     "@typebot.io/advanced-media-block": "workspace:*",
     "@typebot.io/openid-block": "workspace:*",
-    "@typebot.io/groq-block": "workspace:*"
+    "@typebot.io/groq-block": "workspace:*",
+    "@typebot.io/insert-chat-block": "workspace:*"
   }
 }
