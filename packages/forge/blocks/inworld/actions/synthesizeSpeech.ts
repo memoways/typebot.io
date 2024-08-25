@@ -31,7 +31,8 @@ export const synthesizeSpeech = createAction({
       variables,
     }) => {
 
-      let message = (options.message as string).replace(/(\r\n|\n|\r|\s)/gm, " ").substring(0, 2400)
+      let message = (options.message ?? "no message given")
+      message = message.replace(/(\r\n|\n|\r|\s)/gm, " ").substring(0, 2400)
 
 
       const res = await ky.post([
