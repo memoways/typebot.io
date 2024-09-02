@@ -7,7 +7,7 @@ export const auth = {
     jwtToken: option.string.layout({
       label: 'JWT Token',
       isRequired: true,
-      helperText: 'Use your browser console on the insert chat admin UI to get the Authorization header',
+      moreInfoTooltip: 'Use your browser console on the insert chat admin UI to get the Authorization header',
       placeholder: 'NHsjIDkl.xjsdofhs8s9djsal01pcmNALSIFakNAPskdhf0823lsandOS',
       withVariableButton: false,
       isDebounceDisabled: true,
