@@ -25,3 +25,8 @@ delete-git:
 write-env:
 	$(file > .env,${ENV})
 
+
+.PHONY: migrate
+
+migrate:
+	./node_modules/.bin/prisma migrate deploy  --schema packages/prisma/postgresql/schema.prisma
