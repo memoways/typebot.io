@@ -6,7 +6,7 @@ import { bgVideo } from './actions/bgVideo'
 export const advancedMediaBlock = createBlock({
   id: 'advanced-media',
   name: 'Adv. Media',
-  tags: [],
+  tags: ['image'],
   LightLogo: AdvancedMediaLogo,
   actions: [bgImage, bgVideo],
 })

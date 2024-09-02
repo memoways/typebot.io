@@ -1,6 +1,6 @@
-import { option, AuthDefinition } from '@typebot.io/forge'
+import { option, createAuth } from '@typebot.io/forge'
 
-export const auth = {
+export const auth = createAuth({
   type: 'encryptedCredentials',
   name: 'Insert Chat account',
   schema: option.object({
@@ -13,7 +13,7 @@ export const auth = {
       isDebounceDisabled: true,
     }),
   }),
-} satisfies AuthDefinition
+})
 
 
 export function authHeader({ jwtToken }: any) {

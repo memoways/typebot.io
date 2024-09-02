@@ -7,7 +7,7 @@ import { sendMessage } from './actions/sendMessage'
 export const insertChatBlock = createBlock({
   id: 'insert-chat',
   name: 'Insert Chat',
-  tags: [],
+  tags: ['ai'],
   LightLogo: InsertChatLogo,
   auth,
   actions: [openSession, sendMessage],

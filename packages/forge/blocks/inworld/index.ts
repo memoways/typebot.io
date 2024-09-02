@@ -8,7 +8,7 @@ import { synthesizeSpeech } from './actions/synthesizeSpeech'
 export const inworldBlock = createBlock({
   id: 'inworld',
   name: 'Inworld',
-  tags: [],
+  tags: ['ai'],
   LightLogo: InworldLogo,
   auth,
   actions: [openSession, sendMessage, synthesizeSpeech],
