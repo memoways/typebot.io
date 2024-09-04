@@ -30,3 +30,8 @@ write-env:
 
 migrate:
 	./node_modules/.bin/prisma migrate deploy  --schema packages/prisma/postgresql/schema.prisma
+
+.PHONY: server
+
+server:
+	pnpm run dev
