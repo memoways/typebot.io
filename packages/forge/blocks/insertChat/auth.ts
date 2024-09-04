@@ -12,7 +12,7 @@ export const auth = createAuth({
       withVariableButton: false,
       isDebounceDisabled: true,
     }),
-  }) as any,
+  }),
 })
 
 
