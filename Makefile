@@ -33,5 +33,5 @@ migrate:
 
 .PHONY: server
 
-server:
+server: deps
 	pnpm run dev
