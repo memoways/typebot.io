@@ -12,7 +12,7 @@ import { openAIBlock } from '@typebot.io/openai-block'
 import { nocodbBlock } from '@typebot.io/nocodb-block'
 import { segmentBlock } from '@typebot.io/segment-block'
 import { inworldBlock } from '@typebot.io/inworld-block'
-import { advancedMediaBlock } from '@typebot.io/advanced-media-block'
+import { advancedStyleBlock } from '@typebot.io/advanced-style-block'
 import { openidBlock } from '@typebot.io/openid-block'
 import { groqBlock } from '@typebot.io/groq-block'
 import { insertChatBlock } from '@typebot.io/insert-chat-block'
@@ -31,7 +31,7 @@ export const forgedBlocks = {
   [nocodbBlock.id]: nocodbBlock,
   [segmentBlock.id]: segmentBlock,
   [inworldBlock.id]: inworldBlock,
-  [advancedMediaBlock.id]: advancedMediaBlock,
+  [advancedStyleBlock.id]: advancedStyleBlock,
   [openidBlock.id]: openidBlock,
   [groqBlock.id]: groqBlock,
   [insertChatBlock.id]: insertChatBlock,

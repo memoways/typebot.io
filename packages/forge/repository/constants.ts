@@ -15,7 +15,7 @@ export const forgedBlockIds = [
   'nocodb',
   'segment',
   'inworld',
-  'advanced-media',
+  'advanced-style',
   'openid',
   'groq',
   'insert-chat',

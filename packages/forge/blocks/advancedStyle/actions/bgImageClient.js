@@ -1,5 +1,5 @@
 function container(name) {
-  const klass = `advanced-media-container-${name}`
+  const klass = `advanced-style-container-${name}`
   let div = document.querySelector(`.${klass}`)
   if (div) {
     return div
