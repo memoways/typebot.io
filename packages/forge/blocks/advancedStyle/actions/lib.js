@@ -29,16 +29,27 @@ function container(name) {
 }
 
 function lock_run(cb) {
+  const t = document.querySelector("typebot-standard")
   let q = window.__queue__
+  if (q && q.id != t.dataset.queueId) {
+    q = null
+  }
   if (!q) {
-    q = window.__queue__ = {locked: false, callbacks: []}
+    const id = Date.now().toString()
+    t.dataset.queueId = id
+    q = window.__queue__ = {id, locked: false, callbacks: []}
   }
 
   if (q.locked) {
     q.callbacks.unshift(cb)
   } else {
     q.locked = true
-    cb()
+    try {
+      cb()
+    } catch(e) {
+      console.error("An error occured while running callback")
+      console.error(e)
+    }
   }
 }
 
@@ -57,7 +68,12 @@ function unlock() {
       return
     }
     q.locked = true
-    cb()
+    try {
+      cb()
+    } catch(e) {
+      console.error("An error occured while running callback")
+      console.error(e)
+    }
   }
 }
 
