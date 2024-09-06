@@ -18,10 +18,11 @@ function container(name) {
   div.style.backgroundPosition = "center"
   div.style.display = "block"
   div.style.opacity = "0"
-  div.style.zIndex = "1"
+  div.style.zIndex = "-1"
   div.style.transition = "opacity 1s ease-in-out"
   const root = document.querySelector("typebot-standard").parentElement
   root.style.position = "relative"
+  root.style.zIndex = "0"
   root.prepend(div)
 
   return div
