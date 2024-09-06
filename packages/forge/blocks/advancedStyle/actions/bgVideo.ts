@@ -1,6 +1,8 @@
 import { createAction, option } from '@typebot.io/forge'
 // @ts-ignore
 import content from '!!raw-loader!./bgVideoClient.js'
+// @ts-ignore
+import lib from '!!raw-loader!./lib.js'
 
 export const bgVideo = createAction({
   name: "Background video",
@@ -30,7 +32,7 @@ export const bgVideo = createAction({
             MUTED: +(options.muted ?? true),
             LOOP: +(options.loop ?? true),
           },
-          content,
+          content: (lib + content),
         }
       },
     },

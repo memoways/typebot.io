@@ -1,51 +1,43 @@
-function container(name) {
-  const klass = `advanced-style-container-${name}`
-  let div = document.querySelector(`.${klass}`)
-  if (div) {
-    return div
-  }
-  div = document.createElement("div")
-  div.className = klass 
-  div.style.position = "absolute"
-  div.style.inset = "0"
-  div.style.backgroundSize = "cover"
-  div.style.backgroundPosition = "center"
-  div.style.display = "block"
-  div.style.opacity = "0"
-  div.style.zIndex = "-1"
-  div.style.transition = "opacity 1s ease-in-out"
-  const root = document.querySelector("typebot-standard").parentElement
-  root.style.position = "relative"
-  root.prepend(div)
-  return div
-}
-
 function render(url) {
   const a = container("a")
   const b = container("b")
+  const t = document.querySelector("typebot-standard")
+  let cont = t.shadowRoot.querySelector(".typebot-container")
 
   let src = null
   let dst = null
 
-  if (a.style.opacity == "0") {
-    src = b
-    dst = a
-  } else {
+  if (a.dataset.advancedStyleVisibility == "visible") {
     src = a
     dst = b
+  } else {
+    src = b
+    dst = a
   }
 
   let img = new Image()
   img.onload = () => {
     src.style.opacity = "0"
+    src.dataset.advancedStyleVisibility = "fadeout"
+
     dst.innerHTML = ""
+    dst.dataset.advancedStyleVisibility = "fadein"
     dst.style.opacity = "1"
     dst.style.backgroundImage = "url(" + url + ")"
+
+    cont.dataset.advancedStyleType = "image"
+
     setTimeout(() => {
       src.innerHTML = ""
+      src.dataset.advancedStyleType = "none"
+      src.dataset.advancedStyleVisibility = "hidden"
+
+      dst.dataset.advancedStyleVisibility = "visible"
+      dst.dataset.advancedStyleType = "image"
+      setTimeout(() => unlock(), 1000)
     }, 1000)
   }
   img.src = url
 }
 
-render(URL)
+lock_run(() => render(URL))

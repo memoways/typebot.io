@@ -1,6 +1,8 @@
 import { createAction, option } from '@typebot.io/forge'
 // @ts-ignore
 import content from '!!raw-loader!./bgImageClient.js'
+// @ts-ignore
+import lib from '!!raw-loader!./lib.js'
 
 export const bgImage = createAction({
   name: "Background image",
@@ -19,7 +21,7 @@ export const bgImage = createAction({
           args: {
             URL: options.url ?? null
           },
-          content,
+          content: (lib + content),
         }
       },
     },

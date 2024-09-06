@@ -1,38 +1,18 @@
-function container(name) {
-  const klass = `advanced-style-container-${name}`
-  let div = document.querySelector(`.${klass}`)
-  if (div) {
-    return div
-  }
-  div = document.createElement("div")
-  div.className = klass 
-  div.style.position = "absolute"
-  div.style.inset = "0"
-  div.style.backgroundSize = "cover"
-  div.style.backgroundPosition = "center"
-  div.style.display = "block"
-  div.style.opacity = "0"
-  div.style.zIndex = "-1"
-  div.style.transition = "opacity 1s ease-in-out"
-  const root = document.querySelector("typebot-standard").parentElement
-  root.style.position = "relative"
-  root.prepend(div)
-  return div
-}
-
 function render(args) {
   const a = container("a")
   const b = container("b")
+  const t = document.querySelector("typebot-standard")
+  let cont = t.shadowRoot.querySelector(".typebot-container")
 
   let src = null
   let dst = null
 
-  if (a.style.opacity == "0") {
-    src = b
-    dst = a
-  } else {
+  if (a.dataset.advancedStyleVisibility == "visible") {
     src = a
     dst = b
+  } else {
+    src = b
+    dst = a
   }
 
 
@@ -44,6 +24,7 @@ function render(args) {
   video.style.objectFit = "cover"
 
   dst.innerHTML = ""
+  dst.dataset.advancedStyleVideoPlaying = false
   dst.prepend(video)
 
   var player = videojs(video)
@@ -53,12 +34,38 @@ function render(args) {
   player.fill(true)
   player.disablePictureInPicture(true)
   player.loop(args.loop)
-  player.ready(() => {
-    src.style.opacity = "0"
-    dst.style.opacity = "1"
+  player.on("paused", () => {
+    dst.dataset.advancedStyleVideoPlaying = false
+    cont.dataset.advancedStyleVideoStatus = "paused"
+  })
+  player.on("ended", () => {
+    dst.dataset.advancedStyleVideoPlaying = false
+    cont.dataset.advancedStyleVideoStatus = "ended"
+    unlock()
+  })
+  player.on("ready", () => {
     player.play()
+  })
+
+  player.on("playing", () => {
+    src.style.opacity = "0"
+    src.dataset.advancedStyleVisibility = "fadeout"
+
+    dst.style.opacity = "1"
+    dst.dataset.advancedStyleVisibility = "fadein"
+
+    dst.dataset.advancedStyleVideoPlaying = true
+    cont.dataset.advancedStyleVideoStatus = "playing"
+
     setTimeout(() => {
       src.innerHTML = ""
+      src.dataset.advancedStyleType = "none"
+      src.dataset.advancedStyleVisibility = "hidden"
+
+      dst.dataset.advancedStyleVisibility = "visible"
+      dst.dataset.advancedStyleType = "video"
+
+      cont.dataset.advancedStyleType = "video"
     }, 1000)
   })
 
@@ -86,5 +93,6 @@ function install(args) {
 }
 
 let opts = {url: URL, muted: MUTED, loop: LOOP}
-install(opts)
+
+lock_run(() => install(opts))
 
