@@ -28,6 +28,8 @@ import { insertChatBlock } from '@typebot.io/insert-chat-block'
 import { insertChatCredentialsSchema } from '@typebot.io/insert-chat-block/schemas'
 import { convaiBlock } from '@typebot.io/convai-block'
 import { convaiCredentialsSchema } from '@typebot.io/convai-block/schemas'
+import { zendeskBlock } from '@typebot.io/zendesk-block'
+import { zendeskCredentialsSchema } from '@typebot.io/zendesk-block/schemas'
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -45,4 +47,5 @@ export const forgedCredentialsSchemas = {
   [groqBlock.id]: groqCredentialsSchema,
   [insertChatBlock.id]: insertChatCredentialsSchema,
   [convaiBlock.id]: convaiCredentialsSchema,
+  [zendeskBlock.id]: zendeskCredentialsSchema,
 }

@@ -24,6 +24,8 @@
     "@typebot.io/openid-block": "workspace:*",
     "@typebot.io/groq-block": "workspace:*",
     "@typebot.io/insert-chat-block": "workspace:*",
-    "@typebot.io/convai-block": "workspace:*"
+    "@typebot.io/convai-block": "workspace:*",
+    "@typebot.io/groq-block": "workspace:*",
+    "@typebot.io/zendesk-block": "workspace:*"
   }
 }

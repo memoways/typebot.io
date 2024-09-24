@@ -35,6 +35,8 @@ import { insertChatBlock } from '@typebot.io/insert-chat-block'
 import { insertChatBlockSchema } from '@typebot.io/insert-chat-block/schemas'
 import { convaiBlock } from '@typebot.io/convai-block'
 import { convaiBlockSchema } from '@typebot.io/convai-block/schemas'
+import { zendeskBlock } from '@typebot.io/zendesk-block'
+import { zendeskBlockSchema } from '@typebot.io/zendesk-block/schemas'
 
 export const forgedBlockSchemas = {
   [openAIBlock.id]: openAIBlockSchema,
@@ -55,4 +57,5 @@ export const forgedBlockSchemas = {
   [groqBlock.id]: groqBlockSchema,
   [insertChatBlock.id]: insertChatBlockSchema,
   [convaiBlock.id]: convaiBlockSchema,
+  [zendeskBlock.id]: zendeskBlockSchema,
 }

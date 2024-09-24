@@ -17,6 +17,7 @@ import { openidBlock } from '@typebot.io/openid-block'
 import { groqBlock } from '@typebot.io/groq-block'
 import { insertChatBlock } from '@typebot.io/insert-chat-block'
 import { convaiBlock } from '@typebot.io/convai-block'
+import { zendeskBlock } from '@typebot.io/zendesk-block'
 
 export const forgedBlocks = {
   [openAIBlock.id]: openAIBlock,
@@ -37,4 +38,5 @@ export const forgedBlocks = {
   [groqBlock.id]: groqBlock,
   [insertChatBlock.id]: insertChatBlock,
   [convaiBlock.id]: convaiBlock,
+  [zendeskBlock.id]: zendeskBlock,
 }
