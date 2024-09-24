@@ -26,6 +26,8 @@ import { groqBlock } from '@typebot.io/groq-block'
 import { groqCredentialsSchema } from '@typebot.io/groq-block/schemas'
 import { insertChatBlock } from '@typebot.io/insert-chat-block'
 import { insertChatCredentialsSchema } from '@typebot.io/insert-chat-block/schemas'
+import { convaiBlock } from '@typebot.io/convai-block'
+import { convaiCredentialsSchema } from '@typebot.io/convai-block/schemas'
 
 export const forgedCredentialsSchemas = {
   [openAIBlock.id]: openAICredentialsSchema,
@@ -42,4 +44,5 @@ export const forgedCredentialsSchemas = {
   [openidBlock.id]: openidCredentialsSchema,
   [groqBlock.id]: groqCredentialsSchema,
   [insertChatBlock.id]: insertChatCredentialsSchema,
+  [convaiBlock.id]: convaiCredentialsSchema,
 }
