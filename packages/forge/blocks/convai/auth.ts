@@ -8,9 +8,11 @@ export const auth = {
       label: 'API key',
       isRequired: true,
       inputType: 'password',
-      helperText: 'You can generate an API key [here](<INSERT_URL>).',
+      helperText: 'Insert your convai API key.',
       withVariableButton: false,
       isDebounceDisabled: true,
     }),
   }),
 } satisfies AuthDefinition
+
+
